@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        </br>
+        <a href="/">HOME</a>
+        <a href="/addbooks">&nbsp &nbsp ADD BOOKS</a>
+        <a href="/listbooks">&nbsp &nbsp LIST BOOKS</a>
+        <a href="/listtitles">&nbsp &nbsp LIST TITLES</a> </br>
+        </br>
+        <img src="logo.jpeg" width="400" height="160"> </br>
+        <h1>ADD A BOOK</h1>
+    </head>
+
+    <body>
+        <form action="/newbookadded" method="POST">
+            Title: </br>
+            <input type="text" name="title" /> </br>
+            </br>
+            Author: </br>
+            <input type="text" name="author" /> </br>
+            </br>
+            Topic: </br>
+            <input type="topic" name="topic" /> </br>
+            </br>
+            Cost: </br>
+            <input type="number" name="cost" /> </br>
+            </br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delete Books by Topic</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+    <div class="header">
+        <h1>Book Management System</h1>
+    </div>
+
+    <div class="navbar">
+        <a href="/addbooks">Add Books</a>
+        <a href="/deletebytopic">Delete by Topic</a>
+        <a href="/deletebydate">Delete by Date</a>
+        <a href="/updatebooks">Update Books</a>
+        <a href="/listbooks">List Books</a>
+    </div>
+
+    <div class="content">
+        <h2>Delete Books by Topic</h2>
+        <form action="/postdeletetopic" method="POST">
+            Topic: </br>
+            <input type="text" name="topic" /> </br>
+            </br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </body>
+</html>

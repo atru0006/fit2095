@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Patients</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <img src="logo.jpeg" width="760" height="280">
+        </div>
+    
+        <div class="navbar">
+            <a href="/adddoctor">Add Doctor</a>
+            <a href="/listdoctors">List Doctors</a>
+            <a href="/addpatient">Add Patient</a>
+            <a href="/listpatients">List Patients</a>
+            <a href="/deletepatient">Delete Patient</a>
+            <a href="/updatedoctor">Update Doctor</a>
+        </div>
+        
+        <div class="content">
+            <h2>List of All Patients</h2>
+            <table>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Date of Visit</th>
+                    <th>Case Description</th>
+                    <th>Doctor First Name</th>
+                    <th>Doctor Last Name</th>
+                </tr>
+                <% for(let i = 0; i < patientsdb.length; i++) { %>
+                    <tr>
+                        <td><%= patientsdb[i].fullName %></td>
+                        <td><%= patientsdb[i].age %></td>
+                        <td><%= patientsdb[i].dateOfVisit %></td>
+                        <td><%= patientsdb[i].caseDescription %></td>
+                        <td><%= patientsdb[i].doctor.fullName.firstName %></td>
+                        <td><%= patientsdb[i].doctor.fullName.lastName %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>

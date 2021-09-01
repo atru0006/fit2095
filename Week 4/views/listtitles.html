@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        </br>
+        <a href="/">HOME</a>
+        <a href="/addbooks">&nbsp &nbsp ADD BOOKS</a>
+        <a href="/listbooks">&nbsp &nbsp LIST BOOKS</a>
+        <a href="/listtitles">&nbsp &nbsp LIST TITLES</a> </br>
+        </br>
+        <img src="logo.jpeg" width="400" height="160">
+        <h1>LIST OF ALL TITLES</h1>
+    </head>
+
+    <body>
+        <table class="center">
+            <tr>
+                <th>Title</th>
+            </tr>
+            <% for(let i = 0; i < booksdb.length; i++) { %>
+                <tr>
+                    <td><%= booksdb[i].title %></td>
+                </tr>
+            <% }%>
+        </table>
+    </body>
+</html>
