@@ -134,3 +134,10 @@ app.get('/deletedoctor', function (req, res) {
     });
     res.send('Done');
 });
+
+// app.get('/deletedoctor', function (req, res) {
+//     Doctor.deleteOne({'fullName.firstName': ''}, function (err, data) {
+//         console.log(data);
+//     });
+//     res.redirect('/listdoctors');
+// });
