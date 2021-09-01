@@ -11,12 +11,12 @@
 
 .navbar {
     overflow: hidden;
-    background-color: white;
+    background-color: #70cee4;
 }
 
 .navbar a {
     float: left;
-    color: #2e2e2e;
+    color: white;
     text-align: center;
     font-weight: bold;
     padding: 15px 60px;
@@ -41,7 +41,7 @@ body {
 td {
     text-align: left;
     padding: 15px;
-    border-bottom: 1px solid #2e2e2e;
+    border-bottom: 1px solid lightgrey;
 }
   
 th {

@@ -21,7 +21,8 @@ let doctorSchema = mongoose.Schema({
                     return newState.length >= 2 && newState.length <= 3;
                 },
                 message: 'State should be 2 or 3 characters long'
-            }
+            },
+            get: upperCase
         },
         suburb: String,
         street: String,
@@ -37,5 +38,9 @@ let doctorSchema = mongoose.Schema({
         }
     }
 });
+
+function upperCase(state) {
+    return state.toUpperCase();
+}
 
 module.exports = mongoose.model('Doctor', doctorSchema);
