@@ -1,0 +1,48 @@
+body {
+    background-color: #445f82;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f3bc5b;
+  text-decoration: none;
+}
+
+a:active {
+  color: #f3bc5b;
+  text-decoration: none;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  padding: 15px;
+  background-color: #2eb5a8;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Doctors</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <img src="logo.jpeg" width="760" height="280">
+        </div>
+    
+        <div class="navbar">
+            <a href="/adddoctor">Add Doctor</a>
+            <a href="/listdoctors">List Doctors</a>
+            <a href="/addpatient">Add Patient</a>
+            <a href="/listpatients">List Patients</a>
+            <a href="/deletepatient">Delete Patient</a>
+            <a href="/updatedoctor">Update Doctor</a>
+        </div>
+        
+        <div class="content">
+            <h2>List of All Doctors</h2>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>State</th>
+                    <th>Suburb</th>
+                    <th>Street</th>
+                    <th>Unit</th>
+                    <th>#Patients</th>
+                    <th>Doctor ID</th>
+                </tr>
+                <% for(let i = 0; i < doctorsdb.length; i++) { %>
+                    <tr>
+                        <td><%= doctorsdb[i].fullName.firstName %></td>
+                        <td><%= doctorsdb[i].fullName.lastName %></td>
+                        <td><%= doctorsdb[i].dob %></td>
+                        <td><%= doctorsdb[i].address.state %></td>
+                        <td><%= doctorsdb[i].address.suburb %></td>
+                        <td><%= doctorsdb[i].address.street %></td>
+                        <td><%= doctorsdb[i].address.unit %></td>
+                        <td><%= doctorsdb[i].numPatients %></td>
+                        <td><%= doctorsdb[i]._id %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>

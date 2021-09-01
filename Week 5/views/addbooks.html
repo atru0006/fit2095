@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Books</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+    <div class="header">
+        <h1>Book Management System</h1>
+    </div>
+
+    <div class="navbar">
+        <a href="/addbooks">Add Books</a>
+        <a href="/deletebytopic">Delete by Topic</a>
+        <a href="/deletebydate">Delete by Date</a>
+        <a href="/updatebooks">Update Books</a>
+        <a href="/listbooks">List Books</a>
+    </div>
+
+    <div class="content">
+        <h2>Add Books</h2>
+        <form action="/postadd" method="POST">
+            Title: </br>
+            <input type="text" name="title" /> </br>
+            </br>
+            Author: </br>
+            <input type="text" name="author" /> </br>
+            </br>
+            Topic: </br>
+            <input type="topic" name="topic" /> </br>
+            </br>
+            Publication date: </br>
+            <input type="date" name="publicationdate" /> </br>
+            </br>
+            Summary: </br>
+            <input type="text" name="summary" /> </br>
+            </br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Patient</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <img src="logo.jpeg" width="760" height="280">
+        </div>
+    
+        <div class="navbar">
+            <a href="/adddoctor">Add Doctor</a>
+            <a href="/listdoctors">List Doctors</a>
+            <a href="/addpatient">Add Patient</a>
+            <a href="/listpatients">List Patients</a>
+            <a href="/deletepatient">Delete Patient</a>
+            <a href="/updatedoctor">Update Doctor</a>
+        </div>
+        
+        <div class="content">
+            <h2>Add Patient</h2>
+            <form action="/patientadded" method="POST">
+                Full Name: </br>
+                <input type="text" name="fullName" /> </br>
+                </br>
+                Doctor ID: </br>
+                <input type="text" name="doctor" /> </br>
+                </br>
+                Age: </br>
+                <input type="number" name="age" /> </br>
+                </br>
+                Date of Visit: </br>
+                <input type="date" name="dateOfVisit" /> </br>
+                </br>
+                Case Description: </br>
+                <input type="text" name="caseDescription" /> </br>
+                </br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
