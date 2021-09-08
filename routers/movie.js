@@ -77,6 +77,16 @@ module.exports = {
         });
     },
 
+    // *PUT: Increment the year of all movies whose titles start with 'X' by 1 - app.put('/movies/', movies.incrementYear);
+    incrementYear: function (req, res) {
+        Movie.updateMany({title: /^X/}, {$inc: {year: 1}}, function (err) {
+            if (err) return res.status(400).json(err);
+            res.json({
+                'Result':'Incremented the year of all movies with titles starting with X by 1'
+            });
+        });
+    },
+
     // *DELETE one movie by ID - app.delete('/movies/:id', movies.deleteOne);
     deleteOne: function (req, res) {
         Movie.deleteOne({ _id: req.params.id }, function (err) {
