@@ -84,7 +84,7 @@ module.exports = {
             if (!actor) return res.status(404).json();
             Movie.deleteMany({_id: actor.movies}, function (err) {
                 res.json({
-                    'Result':'Deleted one actor and all movies'
+                    'Result':'Deleted one actor and all their movies'
                 });
             });
         });
