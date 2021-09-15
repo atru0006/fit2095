@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="container">
+            <h3 style="padding-top: 50px;">Add Doctors</h3>
+            <label for="firstName">First Name</label>
+            <label style="margin-left:120px;" for="lastName">Last Name</label>
+            <br>
+            <input [(ngModel)]="firstName" type="text"/>
+            <input style="margin-left:23px;" [(ngModel)]="lastName" type="text"/>
+            <br>
+            <br>
+            <label for="dob">Date of Birth</label>
+            <br>
+            <input [(ngModel)]="dob" type="date"/>
+            <br>
+            <br>
+            <label for="suburb">Suburb</label>
+            <label style="margin-left:146px;" for="state">State</label>
+            <label style="margin-left:43px;" for="postCode">Post Code</label>
+            <br>
+            <input [(ngModel)]="suburb" type="text"/>
+            <select style="margin-left:23px; height: 30px;" [(ngModel)]="state">
+                <option value="ACT">ACT</option>
+                <option value="NSW">NSW</option>
+                <option value="NT">NT</option>
+                <option value="QLD">QLD</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="VIC">VIC</option>
+                <option value="WA">WA</option>
+            </select>
+            <input style="margin-left:23px;" [(ngModel)]="postCode" type="number"/>
+            <br>
+            <br>
+            <label for="noOfPatients">Number of Patients</label>
+            <br>
+            <input [(ngModel)]="noOfPatients" type="number"/>
+            <br>
+            <br>
+            <button style="margin-right:5px;" class="btn btn-primary" (click)="addDoctor()">Add Doctor ({{noOfDoctors}})</button>
+            <button class="btn btn-secondary" [disabled]="docsZeroPatients == 0" (click)="deleteDocsZeroPatients()">Delete Docs with Zero Patients ({{docsZeroPatients}})</button>
+            <br>
+            <br>
+            <br>
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date of Birth</th>
+                        <th>Address</th>
+                        <th>Number of Patients</th>
+                        <th>Delete?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let doctor of doctorsDB; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{doctor.firstName}}</td>
+                        <td>{{doctor.lastName}}</td>
+                        <td>{{doctor.dob}}</td>
+                        <td>{{doctor.address}}</td>
+                        <td>{{doctor.noOfPatients}}</td>
+                        <td><button class="btn btn-danger" (click)="deleteDoctor(doctor.doctorID)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
