@@ -41,6 +41,8 @@
             <button style="margin-right:5px;" class="btn btn-primary" (click)="addDoctor()">Add Doctor ({{noOfDoctors}})</button>
             <button class="btn btn-secondary" [disabled]="docsZeroPatients == 0" (click)="deleteDocsZeroPatients()">Delete Docs with Zero Patients ({{docsZeroPatients}})</button>
             <br>
+            <label *ngIf="noOfDoctors>0">Average number of patients: {{totalPatients/noOfDoctors}}</label>
+            <br>
             <br>
             <br>
             <table class="table table-hover">

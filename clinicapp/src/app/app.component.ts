@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent {
   doctorsDB: Array<any> = [];
   noOfDoctors: number = 0;
   docsZeroPatients: number = 0;
+  totalPatients: number = 0;
   
   addDoctor() {
     let newID = Math.floor((Math.random() * 100) + 1)
@@ -36,11 +38,13 @@ export class AppComponent {
     if (this.noOfPatients == 0) {
       this.docsZeroPatients++;
     }
+    this.totalPatients = this.totalPatients + this.noOfPatients;
   }
 
   deleteDocsZeroPatients() {
     for (let i = 0; i < this.doctorsDB.length; i++) {
       if (this.doctorsDB[i].noOfPatients == 0) {
+        this.totalPatients = this.totalPatients - this.doctorsDB[i].noOfPatients;
         this.doctorsDB.splice(i, 1);
         this.noOfDoctors--;
         this.docsZeroPatients--;
@@ -60,6 +64,7 @@ export class AppComponent {
     if (this.doctorsDB[index].noOfPatients == 0) {
      this.docsZeroPatients--;
     }
+    this.totalPatients = this.totalPatients - this.doctorsDB[index].noOfPatients;
     this.doctorsDB.splice(index, 1);
     this.noOfDoctors--;
   }
