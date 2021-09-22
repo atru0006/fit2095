@@ -87,12 +87,12 @@ module.exports = {
         });
     },
 
-    // *DELETE one movie by ID - app.delete('/movies/:id', movies.deleteOne);
+    // *DELETE one movie by title - app.delete('/movies/:title', movies.deleteOne);
     deleteOne: function (req, res) {
-        Movie.deleteOne({_id: req.params.id}, function (err) {
+        Movie.findOneAndDelete({title: req.params.title}, function (err) {
             if (err) return res.status(400).json(err);
             res.json({
-                'Result':'Deleted one movie with given ID'
+                'Result':'Deleted one movie with given title'
             });
         });
     },
@@ -103,16 +103,6 @@ module.exports = {
             if (err) return res.status(400).json(err);
             res.json({
                 'Result':'Deleted all movies between year 1 and year 2'
-            });
-        });
-    },
-
-    // *DELETE one movie by title - app.delete('/movies/:title', movies.deleteByTitle);
-    deleteByTitle: function (req, res) {
-        Movie.findOneAndDelete({title: req.params.title}, function (err) {
-            if (err) return res.status(400).json(err);
-            res.json({
-                'Result':'Deleted one movie with given title'
             });
         });
     }
