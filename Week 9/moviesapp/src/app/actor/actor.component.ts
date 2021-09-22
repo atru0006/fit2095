@@ -16,10 +16,11 @@ export class ActorComponent implements OnInit {
   moviesDB: any[] = [];
   title: string = "";
   year: number = 0;
+  movieId: string = "";
   aTitle: string = "";
   aYear1: number = 0;
   aYear2: number = 0;
-  movieId: string = "";
+  birthYear: number = 0;
 
   constructor(private dbService: DatabaseService) {}
   
@@ -107,10 +108,10 @@ export class ActorComponent implements OnInit {
     });
   }
 
-  resetMovieValues() {
-    this.title = "";
-    this.year = 0;
-    this.movieId = "";
+  onDeleteActorBYear() {
+    this.dbService.deleteActorBYear(this.birthYear).subscribe(result => {
+      this.onGetActors();
+    });
   }
   
   // This lifecycle callback function will be invoked with the component get initialized by Angular.
@@ -131,5 +132,9 @@ export class ActorComponent implements OnInit {
     this.title = "";
     this.year = 0;
     this.movieId = "";
+    this.aTitle = "";
+    this.aYear1 = 0;
+    this.aYear2 = 0;
+    this.birthYear = 0;
   }
 }

@@ -26,8 +26,7 @@ app.get('/actors', actors.getAll);
 app.put('/actors/:id', actors.updateOne);
 app.put('/actors/:aId/:mId', actors.removeMovie);
 
-app.delete('/actors/:id', actors.deleteOne);
-app.delete('/actors/:id/movies', actors.deleteActorMovies);
+app.delete('/actors/:bYear', actors.deleteByBYear);
 
 // Movie RESTFul endpoints
 app.post('/movies', movies.createOne);

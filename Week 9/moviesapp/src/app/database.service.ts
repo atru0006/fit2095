@@ -58,4 +58,9 @@ export class DatabaseService {
     let url = "/movies/" + movieId + "/actors/" + actorId;
     return this.http.post(url, httpOptions);
   }
+
+  deleteActorBYear(bYear: number) {
+    let url = "/actors/" + bYear;
+    return this.http.delete(url, httpOptions);
+  }
 }

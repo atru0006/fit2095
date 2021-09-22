@@ -69,24 +69,13 @@ module.exports = {
         });
     },
 
-    // DELETE: Delete one actor by ID - app.delete('/actors/:id', actors.deleteOne);
-	deleteOne: function (req, res) {
-        Actor.findOneAndRemove({_id: req.params.id}, function (err) {
+    // DELETE: Delete actors by birth year - app.delete('/actors/:bYear', actors.deleteOne);
+	deleteByBYear: function (req, res) {
+        Actor.deleteMany({bYear: req.params.bYear}, function (err) {
             if (err) return res.status(400).json(err);
-            res.json();
-        });
-	},
-
-    // *DELETE: Delete one actor and all their movies - app.delete('/actors/:id/movies', actors.deleteActorMovies);
-    deleteActorMovies: function (req, res) {
-        Actor.findOneAndRemove({_id: req.params.id}, function (err, actor) {
-            if (err) return res.status(400).json(err);
-            if (!actor) return res.status(404).json();
-            Movie.deleteMany({_id: actor.movies}, function (err) {
-                res.json({
-                    'Result':'Deleted one actor and all their movies'
-                });
+            res.json({
+                'Result':'Deleted all actors with given birth year'
             });
         });
-    }
+	}
 };
